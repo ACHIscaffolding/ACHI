@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
+  ViewKanban,
   People,
   Business,
   TrendingUp,
@@ -28,6 +29,7 @@ const DRAWER_WIDTH = 260;
 
 const navItems = [
   { label: 'Dashboard', icon: <DashboardIcon />, path: '/' },
+  { label: 'CRM', icon: <ViewKanban />, path: '/crm' },
   { label: 'Leads', icon: <People />, path: '/leads' },
   { label: 'Clients', icon: <Business />, path: '/clients' },
   { label: 'Inventory', icon: <Inventory2 />, path: '/inventory' },
@@ -84,6 +86,7 @@ export default function Sidebar() {
       <List sx={{ px: 1.5, py: 1, flex: 1 }}>
         {navItems.map((item) => {
           const active = location.pathname === item.path;
+
           return (
             <ListItemButton
               key={item.path}
@@ -103,6 +106,7 @@ export default function Sidebar() {
               >
                 {item.icon}
               </ListItemIcon>
+
               <ListItemText
                 primary={item.label}
                 primaryTypographyProps={{
@@ -117,6 +121,7 @@ export default function Sidebar() {
       </List>
 
       <Divider sx={{ borderColor: 'rgba(255,255,255,0.15)', mx: 2 }} />
+
       <List sx={{ px: 1.5, pb: 2 }}>
         <ListItemButton
           onClick={() => navigate('/login')}
@@ -125,13 +130,16 @@ export default function Sidebar() {
           <ListItemIcon sx={{ color: 'rgba(255,255,255,0.7)', minWidth: 40 }}>
             <Logout />
           </ListItemIcon>
+
           <ListItemText
             primary="Logout"
-            primaryTypographyProps={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.85)' }}
+            primaryTypographyProps={{
+              fontSize: '0.875rem',
+              color: 'rgba(255,255,255,0.85)',
+            }}
           />
         </ListItemButton>
       </List>
     </Drawer>
   );
 }
-
