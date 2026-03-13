@@ -15,15 +15,12 @@ import {
   ViewKanban,
   People,
   Business,
-  TrendingUp,
-  EventNote,
   History,
   Description,
   BarChart,
   Settings,
   Logout,
   Inventory2,
-  FolderOpen,
 } from '@mui/icons-material';
 
 const DRAWER_WIDTH = 260;
@@ -34,8 +31,6 @@ const navItems = [
   { label: 'Leads', icon: <People />, path: '/leads' },
   { label: 'Clients', icon: <Business />, path: '/clients' },
   { label: 'Inventory', icon: <Inventory2 />, path: '/inventory' },
-  { label: 'Opportunities', icon: <TrendingUp />, path: '/opportunities' },
-  { label: 'Follow Ups', icon: <EventNote />, path: '/follow-ups' },
   { label: 'Activities', icon: <History />, path: '/activities' },
   { label: 'Quotations', icon: <Description />, path: '/quotations' },
   { label: 'Reports', icon: <BarChart />, path: '/reports' },
