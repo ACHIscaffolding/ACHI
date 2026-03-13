@@ -19,7 +19,7 @@ import NotFound from './pages/NotFound';
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route element={<AppLayout />}>
