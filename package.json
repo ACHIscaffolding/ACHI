@@ -1,4 +1,7 @@
 {
+  "home": "https://github.com/Mhmd2343/ACHI-ERP",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
@@ -84,6 +87,7 @@
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
     "jsdom": "^20.0.3",
     "lovable-tagger": "^1.1.13",
