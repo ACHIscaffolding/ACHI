@@ -132,11 +132,9 @@ const navSections = [
     title: 'Commercial',
     items: [
       { label: 'CRM', icon: <TinyRingDot />, path: '/crm' },
-      { label: 'Contacts', icon: <TinyRing />, path: '/clients' },
+      // { label: 'Contacts', icon: <TinyRing />, path: '/clients' },
       { label: 'Quotations', icon: <TinySquare />, path: '/quotations' },
-      { label: 'CRM / Sales', icon: <TinyRingDot />, path: '/crm' },
       { label: 'Contacts', icon: <TinyRing />, path: '/contacts' },
-      { label: 'Quote Builder', icon: <TinySquare />, path: '/quotations' },
     ],
   },
   {
