@@ -126,21 +126,23 @@ const TinyFlag = () => (
 const navSections = [
   {
     title: 'Overview',
-    items: [{ label: 'Dashboard', icon: <TinyDiamond />, path: '/' }],
+    items: [
+      { label: 'Dashboard', icon: <TinyDiamond />, path: '/' },
+    ],
   },
   {
     title: 'Commercial',
     items: [
-      { label: 'CRM / Sales', icon: <TinyRingDot />, path: '/crm' },
-      { label: 'Quote Builder', icon: <TinySquare />, path: '/quotations' },
+      { label: 'CRM', icon: <TinyRingDot />, path: '/crm' },
+      { label: 'Contacts', icon: <TinyRing />, path: '/clients' },
+      { label: 'Quotations', icon: <TinySquare />, path: '/quotations' },
     ],
   },
   {
     title: 'Operations',
     items: [
-      { label: 'Projects', icon: <TinyRing />, path: '/crm/projects' },
       { label: 'Inventory', icon: <TinyStack />, path: '/inventory' },
-      { label: 'Crew & HR', icon: <TinyRingDot />, path: '/activities' },
+      { label: 'Activities', icon: <TinyRingDot />, path: '/activities' },
     ],
   },
   {
@@ -152,7 +154,13 @@ const navSections = [
   {
     title: 'Compliance',
     items: [
-      { label: 'Safety', icon: <TinyFlag />, path: '/reports' },
+      { label: 'Reports', icon: <TinyFlag />, path: '/reports' },
+    ],
+  },
+  {
+    title: 'System',
+    items: [
+      { label: 'Settings', icon: <TinyDiamond />, path: '/settings' },
     ],
   },
 ];
