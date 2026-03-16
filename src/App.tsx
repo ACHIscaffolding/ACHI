@@ -6,6 +6,7 @@ import AppLayout from './components/layout/AppLayout';
 import DashboardPage from './pages/DashboardPage';
 import LeadsPage from './pages/LeadsPage';
 import ClientsPage from './pages/ClientsPage';
+import ContactPage from './pages/ContactPage';
 import OpportunitiesPage from './pages/OpportunitiesPage';
 import FollowUpsPage from './pages/FollowUpsPage';
 import ActivitiesPage from './pages/ActivitiesPage';
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/" element={<DashboardPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/clients" element={<ClientsPage />} />
+          <Route path="/contacts" element={<ContactPage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/opportunities" element={<OpportunitiesPage />} />
           <Route path="/follow-ups" element={<FollowUpsPage />} />
