@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import theme from './theme/muiTheme';
 import AppLayout from './components/layout/AppLayout';
 import DashboardPage from './pages/DashboardPage';
@@ -12,7 +12,8 @@ import ActivitiesPage from './pages/ActivitiesPage';
 import QuotationsPage from './pages/QuotationsPage';
 import ReportsPage from './pages/ReportsPage';
 import SettingsPage from './pages/SettingsPage';
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/authentication/LoginPage';
+import RegisterPage from './pages/authentication/RegisterPage';
 import InventoryPage from './pages/InventoryPage';
 import NotFound from './pages/NotFound';
 
@@ -29,10 +30,14 @@ const App = () => (
     <CssBaseline />
     <HashRouter>
       <Routes>
+        {/* Authentication routes */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
+        {/* Main application routes */}
         <Route element={<AppLayout />}>
-          <Route path="/" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/clients" element={<ClientsPage />} />
           <Route path="/inventory" element={<InventoryPage />} />

@@ -126,9 +126,7 @@ const TinyFlag = () => (
 const navSections = [
   {
     title: 'Overview',
-    items: [
-      { label: 'Dashboard', icon: <TinyDiamond />, path: '/' },
-    ],
+    items: [{ label: 'Dashboard', icon: <TinyDiamond />, path: '/' }],
   },
   {
     title: 'Commercial',
@@ -147,21 +145,15 @@ const navSections = [
   },
   {
     title: 'Finance',
-    items: [
-      { label: 'Finance', icon: <TinyDiamond />, path: '/crm/invoices' },
-    ],
+    items: [{ label: 'Finance', icon: <TinyDiamond />, path: '/crm/invoices' }],
   },
   {
     title: 'Compliance',
-    items: [
-      { label: 'Reports', icon: <TinyFlag />, path: '/reports' },
-    ],
+    items: [{ label: 'Reports', icon: <TinyFlag />, path: '/reports' }],
   },
   {
     title: 'System',
-    items: [
-      { label: 'Settings', icon: <TinyDiamond />, path: '/settings' },
-    ],
+    items: [{ label: 'Settings', icon: <TinyDiamond />, path: '/settings' }],
   },
 ];
 
@@ -211,11 +203,13 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
+    document.documentElement.style.setProperty('--sidebar-width', `${effectiveWidth}px`);
+
     return () => {
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
     };
-  }, []);
+  }, [effectiveWidth]);
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
@@ -232,7 +226,6 @@ export default function Sidebar() {
         sx={{
           minHeight: 38,
           px: isCollapsed ? 1 : 2.2,
-          mx: isCollapsed ? 0 : 0,
           display: 'flex',
           alignItems: 'center',
           justifyContent: isCollapsed ? 'center' : 'flex-start',
@@ -314,7 +307,10 @@ export default function Sidebar() {
           borderRight: '1px solid rgba(255,184,0,0.08)',
           overflowX: 'hidden',
           transition: 'width 0.2s ease',
-          position: 'relative',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '100vh',
         },
       }}
     >
@@ -323,6 +319,7 @@ export default function Sidebar() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
+          position: 'relative',
         }}
       >
         <Box
