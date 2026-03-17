@@ -67,9 +67,9 @@ const marketBreakdown = [
 ];
 
 const invoiceStatus = [
-  { label: 'Collected', value: '€93,750', color: '#20C05C' },
-  { label: 'Awaiting', value: '€47,800', color: '#F2A100' },
-  { label: 'Overdue', value: '€14,000', color: '#F04A3A' },
+  { label: 'Collected', value: '€93,750', color: '#28509E' },
+  { label: 'Awaiting', value: '€47,800', color: '#28509E' },
+  { label: 'Overdue', value: '€14,000', color: '#28509E' },
 ];
 
 const pipelineStage = [
@@ -79,9 +79,24 @@ const pipelineStage = [
 ];
 
 const crewAvailability = [
-  { initials: 'KM', name: 'Khalil Mansour', role: 'Lead Scaffolder', status: 'DEPLOYED' },
-  { initials: 'FA', name: 'Fadi Akel', role: 'Site Supervisor', status: 'DEPLOYED' },
-  { initials: 'RH', name: 'Rami Haddad', role: 'Safety Officer', status: 'AWAITING' },
+  {
+    initials: 'KM',
+    name: 'Khalil Mansour',
+    role: 'Lead Scaffolder',
+    status: 'DEPLOYED',
+  },
+  {
+    initials: 'FA',
+    name: 'Fadi Akel',
+    role: 'Site Supervisor',
+    status: 'DEPLOYED',
+  },
+  {
+    initials: 'RH',
+    name: 'Rami Haddad',
+    role: 'Safety Officer',
+    status: 'AWAITING',
+  },
 ];
 
 const recentInvoices = [
@@ -117,16 +132,19 @@ function SectionPanel({
   return (
     <Box
       sx={{
-border: '1px solid rgba(255,184,0,0.08)',
-bgcolor: '#0A0A0A',
+        border: '1px solid rgba(40, 80, 158, 0.14)',
+        bgcolor: '#FFFFFF',
         minHeight,
+        borderRadius: 2,
+        overflow: 'hidden',
       }}
     >
       <Box
         sx={{
           px: 1.8,
           py: 1.25,
-borderBottom: '1px solid rgba(255,184,0,0.08)',
+          borderBottom: '1px solid rgba(40, 80, 158, 0.14)',
+          bgcolor: '#F8FAFF',
         }}
       >
         <Typography
@@ -137,14 +155,14 @@ borderBottom: '1px solid rgba(255,184,0,0.08)',
             lineHeight: 1,
             letterSpacing: '0.01em',
             textTransform: 'uppercase',
-color: '#F5F1E8',
+            color: '#28509E',
           }}
         >
           {title}
         </Typography>
       </Box>
 
-<Box sx={{ p: 1.35 }}>{children}</Box>
+      <Box sx={{ p: 1.35 }}>{children}</Box>
     </Box>
   );
 }
@@ -155,15 +173,17 @@ function ProgressBar({ value }: { value: number }) {
       sx={{
         width: '100%',
         height: 4,
-bgcolor: '#3A3A3A',
+        bgcolor: '#DCE6F7',
         position: 'relative',
+        borderRadius: 999,
+        overflow: 'hidden',
       }}
     >
       <Box
         sx={{
           width: `${value}%`,
           height: '100%',
-          bgcolor: '#F5A000',
+          bgcolor: '#28509E',
         }}
       />
     </Box>
@@ -172,40 +192,45 @@ bgcolor: '#3A3A3A',
 
 export default function DashboardPage() {
   return (
-    <Box>
-      <TopBar title="Command Centre" subtitle="Daily operational overview for ACHI Scaffolding." />
-
-<Box
-  sx={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(5, 1fr)',
-    mb: 1.2,
-    border: '1px solid rgba(255,184,0,0.08)',
-    bgcolor: '#0A0A0A',
-  }}
->
-  {metrics.map((item, index) => (
-    <Box
-      key={item.label}
-      sx={{
-        borderRight:
-          index !== metrics.length - 1
-            ? '1px solid rgba(255,184,0,0.08)'
-            : 'none',
-      }}
-    >
-      <StatCard
-        label={item.label}
-        value={item.value}
-        subtext={item.subtext}
-        accent={item.accent}
+    <Box sx={{ bgcolor: '#FFFFFF' }}>
+      <TopBar
+        title="Command Centre"
+        subtitle="Daily operational overview for ACHI Scaffolding."
       />
-    </Box>
-  ))}
-</Box>
 
-<Grid container spacing={1.1} sx={{ mb: 1.1 }}>
-          <Grid size={{ xs: 12, lg: 7 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          mb: 1.2,
+          border: '1px solid rgba(40, 80, 158, 0.14)',
+          bgcolor: '#FFFFFF',
+          borderRadius: 2,
+          overflow: 'hidden',
+        }}
+      >
+        {metrics.map((item, index) => (
+          <Box
+            key={item.label}
+            sx={{
+              borderRight:
+                index !== metrics.length - 1
+                  ? '1px solid rgba(40, 80, 158, 0.14)'
+                  : 'none',
+            }}
+          >
+            <StatCard
+              label={item.label}
+              value={item.value}
+              subtext={item.subtext}
+              accent={item.accent}
+            />
+          </Box>
+        ))}
+      </Box>
+
+      <Grid container spacing={1.1} sx={{ mb: 1.1 }}>
+        <Grid size={{ xs: 12, lg: 7 }}>
           <SectionPanel title="Active Projects" minHeight={414}>
             <Box>
               <Grid
@@ -213,7 +238,7 @@ export default function DashboardPage() {
                 sx={{
                   px: 0.2,
                   pb: 1,
-                  borderBottom: '1px solid rgba(245,160,0,0.08)',
+                  borderBottom: '1px solid rgba(40, 80, 158, 0.14)',
                   mb: 1.2,
                 }}
               >
@@ -237,7 +262,7 @@ export default function DashboardPage() {
                   key={row.project}
                   sx={{
                     py: 1.3,
-                    borderBottom: '1px solid rgba(245,160,0,0.05)',
+                    borderBottom: '1px solid rgba(40, 80, 158, 0.08)',
                   }}
                 >
                   <Grid size={5}>
@@ -273,7 +298,7 @@ export default function DashboardPage() {
                     mb: 1.6,
                     borderBottom:
                       index !== marketBreakdown.length - 1
-                        ? '1px solid rgba(245,160,0,0.05)'
+                        ? '1px solid rgba(40, 80, 158, 0.08)'
                         : 'none',
                   }}
                 >
@@ -288,7 +313,9 @@ export default function DashboardPage() {
                   >
                     <Box>
                       <Typography sx={mainCellStyle}>{item.market}</Typography>
-                      <Typography sx={subCellStyle}>{item.leads} leads</Typography>
+                      <Typography sx={subCellStyle}>
+                        {item.leads} leads
+                      </Typography>
                     </Box>
 
                     <Typography
@@ -296,7 +323,7 @@ export default function DashboardPage() {
                         fontFamily: "'Rajdhani', sans-serif",
                         fontWeight: 700,
                         fontSize: '1.05rem',
-color: '#F2A100',
+                        color: '#28509E',
                       }}
                     >
                       {item.value}
@@ -306,14 +333,16 @@ color: '#F2A100',
                   <Box
                     sx={{
                       height: 4,
-                      bgcolor: 'rgba(255,255,255,0.12)',
+                      bgcolor: '#DCE6F7',
+                      borderRadius: 999,
+                      overflow: 'hidden',
                     }}
                   >
                     <Box
                       sx={{
                         width: item.width,
                         height: '100%',
-                        bgcolor: '#F5A000',
+                        bgcolor: '#28509E',
                       }}
                     />
                   </Box>
@@ -336,7 +365,7 @@ color: '#F2A100',
                     py: 1.15,
                     borderBottom:
                       index !== invoiceStatus.length - 1
-                        ? '1px solid rgba(245,160,0,0.05)'
+                        ? '1px solid rgba(40, 80, 158, 0.08)'
                         : 'none',
                   }}
                 >
@@ -372,7 +401,7 @@ color: '#F2A100',
                     py: 1.15,
                     borderBottom:
                       index !== pipelineStage.length - 1
-                        ? '1px solid rgba(245,160,0,0.05)'
+                        ? '1px solid rgba(40, 80, 158, 0.08)'
                         : 'none',
                   }}
                 >
@@ -386,7 +415,7 @@ color: '#F2A100',
                       fontFamily: "'Rajdhani', sans-serif",
                       fontWeight: 700,
                       fontSize: '1rem',
-                      color: '#98A2B3',
+                      color: '#28509E',
                     }}
                   >
                     {item.value}
@@ -411,7 +440,7 @@ color: '#F2A100',
                     py: 1.15,
                     borderBottom:
                       index !== crewAvailability.length - 1
-                        ? '1px solid rgba(245,160,0,0.05)'
+                        ? '1px solid rgba(40, 80, 158, 0.08)'
                         : 'none',
                   }}
                 >
@@ -420,15 +449,16 @@ color: '#F2A100',
                       sx={{
                         width: 32,
                         height: 32,
-                        border: '1px solid rgba(245,160,0,0.08)',
-                        bgcolor: '#0B1118',
+                        border: '1px solid rgba(40, 80, 158, 0.14)',
+                        bgcolor: '#F4F8FF',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontFamily: "'Rajdhani', sans-serif",
                         fontWeight: 700,
                         fontSize: '0.8rem',
-                        color: '#667085',
+                        color: '#28509E',
+                        borderRadius: 1,
                       }}
                     >
                       {person.initials}
@@ -457,7 +487,7 @@ color: '#F2A100',
                     py: 1.15,
                     borderBottom:
                       index !== recentInvoices.length - 1
-                        ? '1px solid rgba(245,160,0,0.05)'
+                        ? '1px solid rgba(40, 80, 158, 0.08)'
                         : 'none',
                   }}
                 >
@@ -479,7 +509,7 @@ color: '#F2A100',
                         fontFamily: "'Rajdhani', sans-serif",
                         fontWeight: 700,
                         fontSize: '1rem',
-                        color: '#F8FAFC',
+                        color: '#28509E',
                       }}
                     >
                       {invoice.value}
@@ -505,14 +535,14 @@ const headerCellStyle = {
   fontWeight: 500,
   letterSpacing: '0.12em',
   textTransform: 'uppercase',
-  color: '#6F695D',
+  color: '#5E6B85',
 };
 
 const mainCellStyle = {
   fontFamily: "'Oxanium', sans-serif",
   fontWeight: 700,
   fontSize: '0.98rem',
-  color: '#F5F1E8',
+  color: '#14213D',
   lineHeight: 1.05,
 };
 
@@ -520,11 +550,12 @@ const subCellStyle = {
   mt: 0.35,
   fontFamily: "'IBM Plex Mono', monospace",
   fontSize: '0.72rem',
-  color: '#6F695D',
+  color: '#667085',
 };
+
 const valueCellStyle = {
   fontFamily: "'IBM Plex Mono', monospace",
   fontWeight: 500,
   fontSize: '0.78rem',
-  color: '#B8B0A3',
+  color: '#344054',
 };
