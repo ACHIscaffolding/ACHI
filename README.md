@@ -129,55 +129,10 @@ Material UI (MUI)
 
 Tailwind CSS (for utility styling where applicable)
 
-Backend
-
-Supabase (PostgreSQL + Authentication)
 
 Deployment
 
 GitHub Pages (Frontend)
-
-Supabase Cloud (Backend)
-
-Tools
-
-Git & GitHub (version control)
-
-Postman (API testing)
-
-Project Structure
-src/
-│
-├── components/
-│   ├── layout/           # App layout (sidebar, header)
-│   ├── common/           # Reusable components
-│   └── ui/               # UI elements
-│
-├── pages/
-│   ├── DashboardPage.tsx
-│   ├── CRMPage.tsx
-│   ├── ContactsPage.tsx
-│   ├── LeadsPage.tsx
-│   ├── ClientsPage.tsx
-│   ├── ProjectsPage.tsx
-│   ├── ProjectDetailsPage.tsx
-│   ├── QuotationsPage.tsx
-│   ├── JobOrdersPage.tsx
-│   ├── InvoicesPage.tsx
-│   ├── InventoryPage.tsx
-│   ├── ActivitiesPage.tsx
-│   ├── FollowUpsPage.tsx
-│   ├── ReportsPage.tsx
-│   ├── SettingsPage.tsx
-│   ├── LoginPage.tsx
-│   └── NotFound.tsx
-│
-├── hooks/                # Custom React hooks
-├── lib/                  # Utilities and helpers
-├── data/                 # Static or mock data
-├── theme/                # Material UI theme
-└── main.tsx              # App entry point
-
 
 
 Running the Project Locally
