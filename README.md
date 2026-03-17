@@ -177,3 +177,29 @@ src/
 ├── data/                 # Static or mock data
 ├── theme/                # Material UI theme
 └── main.tsx              # App entry point
+
+
+
+Running the Project Locally
+Requirements
+
+Node.js (v18+ recommended)
+
+npm or yarn
+
+Steps
+# Clone the repository
+git clone <YOUR_REPOSITORY_URL>
+
+# Navigate to project folder
+cd <PROJECT_NAME>
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+The app will run at:
+
+http://localhost:8080/
