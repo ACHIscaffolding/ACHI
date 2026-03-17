@@ -1,73 +1,179 @@
-# Welcome to your Lovable project
+ACHI Scaffolding ERP / CRM System
+Overview
 
-## Project info
+This project is a production-oriented ERP and CRM system developed for ACHI Scaffolding, a scaffolding contracting company. The goal is to centralize and manage the company’s full business lifecycle, from initial client contact to project execution, inventory management, and invoicing.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The system is designed to be:
 
-## How can I edit this code?
+Scalable
 
-There are several ways of editing your application.
+Modular
 
-**Use Lovable**
+Production-ready
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Easy to maintain and extend
 
-Changes made via Lovable will be committed automatically to this repo.
+It combines a modern frontend architecture with a cloud-based backend to ensure accessibility from anywhere.
 
-**Use your preferred IDE**
+Core Features
+1. Contact & Relationship Management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Manage all stakeholders:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Prospect
 
-Follow these steps:
+Lead
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Client
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Supplier
 
-# Step 3: Install the necessary dependencies.
-npm i
+Employee
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Partner
 
-**Edit a file directly in GitHub**
+Worker
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Store detailed information:
 
-**Use GitHub Codespaces**
+Company, phone, email, address
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Source of contact (Google, Instagram, referral, etc.)
 
-## What technologies are used for this project?
+Track communication history and notes
 
-This project is built with:
+2. Project & Pipeline Management
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Full business workflow:
 
-## How can I deploy this project?
+Inquiry → Site Visit → Quotation → Negotiation → Won / Lost → Execution → Completion
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Track project status and priority
 
-## Can I connect a custom domain to my Lovable project?
+Link projects to contacts
 
-Yes, you can!
+Maintain full lifecycle visibility
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+3. Quotations System
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Create structured quotations
+
+Support multiple items per quotation
+
+Track status:
+
+Draft
+
+Sent
+
+Negotiation
+
+Approved / Rejected
+
+4. Job Orders & Execution
+
+Convert approved quotations into job orders
+
+Track execution status
+
+Manage on-site operations
+
+5. Invoicing System
+
+Generate invoices from completed work
+
+Track payment status
+
+Maintain financial records
+
+6. Inventory Management
+
+Manage scaffolding materials and equipment
+
+Track:
+
+Total quantity
+
+Available quantity
+
+Allocated to projects
+
+Damaged items
+
+Link inventory usage to projects
+
+7. Activities & Follow-ups
+
+Log:
+
+Calls
+
+Meetings
+
+Emails
+
+Schedule follow-ups
+
+Maintain full activity history
+
+Tech Stack
+Frontend
+
+React
+
+TypeScript
+
+Vite
+
+Material UI (MUI)
+
+Tailwind CSS (for utility styling where applicable)
+
+Backend
+
+Supabase (PostgreSQL + Authentication)
+
+Deployment
+
+GitHub Pages (Frontend)
+
+Supabase Cloud (Backend)
+
+Tools
+
+Git & GitHub (version control)
+
+Postman (API testing)
+
+Project Structure
+src/
+│
+├── components/
+│   ├── layout/           # App layout (sidebar, header)
+│   ├── common/           # Reusable components
+│   └── ui/               # UI elements
+│
+├── pages/
+│   ├── DashboardPage.tsx
+│   ├── CRMPage.tsx
+│   ├── ContactsPage.tsx
+│   ├── LeadsPage.tsx
+│   ├── ClientsPage.tsx
+│   ├── ProjectsPage.tsx
+│   ├── ProjectDetailsPage.tsx
+│   ├── QuotationsPage.tsx
+│   ├── JobOrdersPage.tsx
+│   ├── InvoicesPage.tsx
+│   ├── InventoryPage.tsx
+│   ├── ActivitiesPage.tsx
+│   ├── FollowUpsPage.tsx
+│   ├── ReportsPage.tsx
+│   ├── SettingsPage.tsx
+│   ├── LoginPage.tsx
+│   └── NotFound.tsx
+│
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities and helpers
+├── data/                 # Static or mock data
+├── theme/                # Material UI theme
+└── main.tsx              # App entry point
