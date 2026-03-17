@@ -18,15 +18,15 @@ export default function TopBar({ title }: TopBarProps) {
     <Box
       sx={{
         mb: 1.3,
-        border: '1px solid rgba(255,184,0,0.08)',
-        bgcolor: '#0A0A0A',
+        border: '1px solid rgba(40,80,158,0.15)',
+        bgcolor: '#FFFFFF',
       }}
     >
       <Box
         sx={{
           px: 2,
           py: 0.7,
-          borderBottom: '1px solid rgba(255,184,0,0.08)',
+          borderBottom: '1px solid rgba(40,80,158,0.15)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -41,7 +41,7 @@ export default function TopBar({ title }: TopBarProps) {
             fontWeight: 600,
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
-            color: '#7A7468',
+            color: '#6C757D',
           }}
         >
           ACHI › {title}
@@ -53,7 +53,7 @@ export default function TopBar({ title }: TopBarProps) {
             fontSize: '0.68rem',
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
-            color: '#7D8592',
+            color: '#6C757D',
           }}
         >
           {formattedDate}
@@ -72,7 +72,7 @@ export default function TopBar({ title }: TopBarProps) {
             fontWeight: 700,
             fontSize: '1.2rem',
             lineHeight: 1,
-            color: '#F5F1E8',
+            color: '#28509E',
             letterSpacing: '0.02em',
             textTransform: 'uppercase',
           }}

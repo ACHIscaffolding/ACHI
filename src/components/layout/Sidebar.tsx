@@ -19,14 +19,20 @@ const COLLAPSED_DRAWER_WIDTH = 72;
 const MIN_DRAWER_WIDTH = 220;
 const MAX_DRAWER_WIDTH = 420;
 
+const SECONDARY_TEXT = '#64748B';
+const PRIMARY_BLUE = '#28509E';
+const LIGHT_BLUE_BG = 'rgba(40, 80, 158, 0.08)';
+const LIGHT_BLUE_HOVER = 'rgba(40, 80, 158, 0.12)';
+const BORDER_BLUE = 'rgba(40, 80, 158, 0.15)';
+
 const TinyDiamond = ({ active = false }: { active?: boolean }) => (
   <Box
     sx={{
       width: 7,
       height: 7,
       transform: 'rotate(45deg)',
-      border: active ? 'none' : '1px solid #8F887C',
-      bgcolor: active ? '#F2A100' : 'transparent',
+      border: active ? 'none' : `1px solid ${SECONDARY_TEXT}`,
+      bgcolor: active ? PRIMARY_BLUE : 'transparent',
     }}
   />
 );
@@ -37,7 +43,7 @@ const TinyRing = () => (
       width: 7,
       height: 7,
       borderRadius: '50%',
-      border: '1px solid #8F887C',
+      border: `1px solid ${SECONDARY_TEXT}`,
     }}
   />
 );
@@ -48,7 +54,7 @@ const TinyRingDot = () => (
       width: 8,
       height: 8,
       borderRadius: '50%',
-      border: '1px solid #8F887C',
+      border: `1px solid ${SECONDARY_TEXT}`,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -59,7 +65,7 @@ const TinyRingDot = () => (
         width: 2.5,
         height: 2.5,
         borderRadius: '50%',
-        bgcolor: '#8F887C',
+        bgcolor: SECONDARY_TEXT,
       }}
     />
   </Box>
@@ -70,7 +76,7 @@ const TinySquare = () => (
     sx={{
       width: 7,
       height: 7,
-      border: '1px solid #8F887C',
+      border: `1px solid ${SECONDARY_TEXT}`,
     }}
   />
 );
@@ -85,9 +91,9 @@ const TinyStack = () => (
       justifyContent: 'space-between',
     }}
   >
-    <Box sx={{ height: 1, bgcolor: '#8F887C' }} />
-    <Box sx={{ height: 1, bgcolor: '#8F887C' }} />
-    <Box sx={{ height: 1, bgcolor: '#8F887C' }} />
+    <Box sx={{ height: 1, bgcolor: SECONDARY_TEXT }} />
+    <Box sx={{ height: 1, bgcolor: SECONDARY_TEXT }} />
+    <Box sx={{ height: 1, bgcolor: SECONDARY_TEXT }} />
   </Box>
 );
 
@@ -106,7 +112,7 @@ const TinyFlag = () => (
         top: 0,
         width: 1,
         height: 8,
-        bgcolor: '#8F887C',
+        bgcolor: SECONDARY_TEXT,
       }}
     />
     <Box
@@ -116,7 +122,7 @@ const TinyFlag = () => (
         top: 1,
         width: 4,
         height: 3,
-        bgcolor: '#8F887C',
+        bgcolor: SECONDARY_TEXT,
         clipPath: 'polygon(0 0, 100% 20%, 75% 100%, 0 80%)',
       }}
     />
@@ -132,7 +138,6 @@ const navSections = [
     title: 'Commercial',
     items: [
       { label: 'CRM', icon: <TinyRingDot />, path: '/crm' },
-      // { label: 'Contacts', icon: <TinyRing />, path: '/clients' },
       { label: 'Quotations', icon: <TinySquare />, path: '/quotations' },
       { label: 'Contacts', icon: <TinyRing />, path: '/contacts' },
     ],
@@ -233,11 +238,11 @@ export default function Sidebar() {
           borderLeft: isCollapsed
             ? '2px solid transparent'
             : active
-            ? '2px solid #F2A100'
-            : '2px solid transparent',
-          bgcolor: active ? 'rgba(242,161,0,0.08)' : 'transparent',
+              ? `2px solid ${PRIMARY_BLUE}`
+              : '2px solid transparent',
+          bgcolor: active ? LIGHT_BLUE_BG : 'transparent',
           '&:hover': {
-            bgcolor: active ? 'rgba(242,161,0,0.10)' : 'rgba(255,255,255,0.015)',
+            bgcolor: active ? LIGHT_BLUE_HOVER : 'rgba(40, 80, 158, 0.05)',
           },
         }}
       >
@@ -245,7 +250,7 @@ export default function Sidebar() {
           sx={{
             minWidth: isCollapsed ? 0 : 20,
             mr: isCollapsed ? 0 : 1,
-            color: active ? '#F2A100' : '#8F887C',
+            color: active ? PRIMARY_BLUE : SECONDARY_TEXT,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -254,7 +259,7 @@ export default function Sidebar() {
         >
           <Box
             sx={{
-              color: active ? '#F2A100' : '#8F887C',
+              color: active ? PRIMARY_BLUE : SECONDARY_TEXT,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -277,7 +282,7 @@ export default function Sidebar() {
               fontWeight: active ? 700 : 600,
               fontSize: '0.86rem',
               letterSpacing: '0.01em',
-              color: active ? '#F5F1E8' : '#CFC7BA',
+              color: active ? PRIMARY_BLUE : SECONDARY_TEXT,
               noWrap: true,
             }}
           />
@@ -303,9 +308,9 @@ export default function Sidebar() {
         '& .MuiDrawer-paper': {
           width: effectiveWidth,
           boxSizing: 'border-box',
-          bgcolor: '#111111',
-          color: '#fff',
-          borderRight: '1px solid rgba(255,184,0,0.08)',
+          bgcolor: '#FFFFFF',
+          color: PRIMARY_BLUE,
+          borderRight: `1px solid ${BORDER_BLUE}`,
           overflowX: 'hidden',
           transition: 'width 0.2s ease',
           position: 'fixed',
@@ -327,7 +332,7 @@ export default function Sidebar() {
           sx={{
             px: isCollapsed ? 1 : 2.2,
             py: 1.7,
-            borderBottom: '1px solid rgba(255,184,0,0.08)',
+            borderBottom: `1px solid ${BORDER_BLUE}`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: isCollapsed ? 'center' : 'space-between',
@@ -342,7 +347,7 @@ export default function Sidebar() {
                   fontWeight: 700,
                   fontSize: '0.95rem',
                   lineHeight: 1.05,
-                  color: '#F2A100',
+                  color: PRIMARY_BLUE,
                   letterSpacing: '0.02em',
                   textTransform: 'uppercase',
                 }}
@@ -357,7 +362,7 @@ export default function Sidebar() {
                   fontSize: '0.66rem',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#7A7468',
+                  color: SECONDARY_TEXT,
                 }}
               >
                 ERP SYSTEM · V2.0
@@ -369,7 +374,7 @@ export default function Sidebar() {
                 fontFamily: "'Oxanium', sans-serif",
                 fontWeight: 700,
                 fontSize: '0.9rem',
-                color: '#F2A100',
+                color: PRIMARY_BLUE,
               }}
             >
               A
@@ -381,10 +386,10 @@ export default function Sidebar() {
               onClick={toggleSidebar}
               size="small"
               sx={{
-                color: '#CFC7BA',
-                bgcolor: 'rgba(255,255,255,0.03)',
+                color: PRIMARY_BLUE,
+                bgcolor: 'rgba(40, 80, 158, 0.08)',
                 '&:hover': {
-                  bgcolor: 'rgba(255,255,255,0.08)',
+                  bgcolor: 'rgba(40, 80, 158, 0.15)',
                 },
               }}
             >
@@ -406,7 +411,7 @@ export default function Sidebar() {
                     fontWeight: 500,
                     letterSpacing: '0.16em',
                     textTransform: 'uppercase',
-                    color: '#6F695D',
+                    color: SECONDARY_TEXT,
                   }}
                 >
                   {section.title}
@@ -420,7 +425,7 @@ export default function Sidebar() {
           ))}
         </Box>
 
-        <Box sx={{ mt: 'auto', borderTop: '1px solid rgba(255,184,0,0.08)' }}>
+        <Box sx={{ mt: 'auto', borderTop: `1px solid ${BORDER_BLUE}` }}>
           {!isCollapsed && (
             <Box sx={{ px: 2.2, py: 1.4 }}>
               <Typography
@@ -429,7 +434,7 @@ export default function Sidebar() {
                   fontSize: '0.62rem',
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
-                  color: '#6F695D',
+                  color: SECONDARY_TEXT,
                   mb: 0.9,
                 }}
               >
@@ -440,7 +445,7 @@ export default function Sidebar() {
                 sx={{
                   fontFamily: "'IBM Plex Mono', monospace",
                   fontSize: '0.68rem',
-                  color: '#7A7468',
+                  color: SECONDARY_TEXT,
                   lineHeight: 1.7,
                 }}
               >
@@ -453,7 +458,7 @@ export default function Sidebar() {
             </Box>
           )}
 
-          <Divider sx={{ borderColor: 'rgba(255,184,0,0.08)' }} />
+          <Divider sx={{ borderColor: BORDER_BLUE }} />
 
           <List sx={{ p: 0 }}>
             {isCollapsed ? (
@@ -465,14 +470,14 @@ export default function Sidebar() {
                     px: 1,
                     justifyContent: 'center',
                     '&:hover': {
-                      bgcolor: 'rgba(240,68,56,0.05)',
+                      bgcolor: 'rgba(239, 68, 68, 0.06)',
                     },
                   }}
                 >
                   <ListItemIcon
                     sx={{
                       minWidth: 0,
-                      color: '#F97066',
+                      color: '#EF4444',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -490,14 +495,14 @@ export default function Sidebar() {
                   minHeight: 38,
                   px: 2.2,
                   '&:hover': {
-                    bgcolor: 'rgba(240,68,56,0.05)',
+                    bgcolor: 'rgba(239, 68, 68, 0.06)',
                   },
                 }}
               >
                 <ListItemIcon
                   sx={{
                     minWidth: 20,
-                    color: '#F97066',
+                    color: '#EF4444',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -514,7 +519,7 @@ export default function Sidebar() {
                     fontFamily: "'Oxanium', sans-serif",
                     fontWeight: 700,
                     fontSize: '0.86rem',
-                    color: '#F97066',
+                    color: '#EF4444',
                     noWrap: true,
                   }}
                 />
@@ -535,7 +540,7 @@ export default function Sidebar() {
               cursor: 'col-resize',
               zIndex: 20,
               '&:hover': {
-                backgroundColor: 'rgba(242,161,0,0.12)',
+                backgroundColor: 'rgba(40, 80, 158, 0.12)',
               },
             }}
           />

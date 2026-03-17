@@ -2,40 +2,40 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#F2A100',
-      light: '#FFB52E',
-      dark: '#C98500',
-      contrastText: '#050505',
+      main: '#28509E',
+      light: '#4A73C5',
+      dark: '#1E3B7A',
+      contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#090909',
-      light: '#111111',
-      dark: '#050505',
-      contrastText: '#F5F1E8',
+      main: '#FFFFFF',
+      light: '#F8F9FA',
+      dark: '#E9ECEF',
+      contrastText: '#28509E',
     },
     success: {
-      main: '#20C05C',
+      main: '#28509E',
     },
     warning: {
-      main: '#F2A100',
+      main: '#FF6B35',
     },
     error: {
       main: '#F04A3A',
     },
     info: {
-      main: '#F6F3EC',
+      main: '#F8F9FA',
     },
     background: {
-      default: '#050505',
-      paper: '#0A0A0A',
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
     },
     text: {
-      primary: '#F5F1E8',
-      secondary: '#7A7468',
+      primary: '#28509E',
+      secondary: '#6C757D',
     },
-    divider: 'rgba(255, 184, 0, 0.08)',
+    divider: 'rgba(40, 80, 158, 0.15)',
   },
   typography: {
     fontFamily: "'Oxanium', sans-serif",
@@ -101,19 +101,19 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          backgroundColor: '#050505',
+          backgroundColor: '#FFFFFF',
         },
         body: {
-          backgroundColor: '#050505',
-          color: '#F5F1E8',
+          backgroundColor: '#FFFFFF',
+          color: '#28509E',
         },
       },
     },
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          borderRight: '1px solid rgba(255, 184, 0, 0.08)',
-          background: '#080808',
+          borderRight: '1px solid rgba(40, 80, 158, 0.15)',
+          background: '#FFFFFF',
           backgroundImage: 'none',
         },
       },
@@ -121,8 +121,8 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: '#0A0A0A',
-          border: '1px solid rgba(255, 184, 0, 0.08)',
+          background: '#FFFFFF',
+          border: '1px solid rgba(40, 80, 158, 0.15)',
           borderRadius: 0,
           boxShadow: 'none',
         },
@@ -140,7 +140,7 @@ const theme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: 'rgba(255, 184, 0, 0.08)',
+          borderColor: 'rgba(40, 80, 158, 0.15)',
         },
       },
     },

@@ -10,20 +10,20 @@ export default function AppLayout() {
       sx={{
         display: 'flex',
         height: '100vh',
-        bgcolor: 'background.default',
+        bgcolor: '#F8FAFC', // light soft white/blue background
       }}
     >
       <Sidebar />
 
-<Box
-  component="main"
-  sx={{
-    flexGrow: 1,
-    p: 4,
-    minHeight: '100vh',
-    backgroundColor: '#050505',
-  }}
->
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 4,
+          minHeight: '100vh',
+          backgroundColor: '#FFFFFF', // main white surface
+        }}
+      >
         <Box
           sx={{
             minHeight: '100%',
